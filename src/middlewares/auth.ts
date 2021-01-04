@@ -7,7 +7,7 @@ import logger from '../logger';
 const verifyAuthentication = (
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): Response | void => {
   try {
     const authHeader = req.headers.authorization;
@@ -29,7 +29,7 @@ const verifyAuthentication = (
     logger.error(e.message);
     return res.status(400).json({
       status: 400,
-      message: e.message,
+      message: e.message
     });
   }
 };

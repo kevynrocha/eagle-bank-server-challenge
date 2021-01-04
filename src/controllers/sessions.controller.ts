@@ -9,7 +9,7 @@ const store = async (req: Request, res: Response): Promise<Response> => {
 
   try {
     const user = users.find(
-      user => user.email === email && user.password === password,
+      user => user.email === email && user.password === password
     );
 
     if (!user) {
@@ -19,21 +19,24 @@ const store = async (req: Request, res: Response): Promise<Response> => {
     const { secret, expiresIn } = authConfig.jwt;
 
     const token = sign({ id: user.id }, secret, {
-      expiresIn,
+      expiresIn
     });
 
     return res.json({
-      user,
-      token,
+      user: {
+        id: user.id,
+        email: user.email,
+        token
+      }
     });
   } catch (error) {
     return res.status(400).json({
       status: 400,
-      message: error.message,
+      message: error.message
     });
   }
 };
 
 export default {
-  store,
+  store
 };

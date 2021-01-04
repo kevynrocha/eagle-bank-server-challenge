@@ -8,7 +8,7 @@ interface Error {
 const validate = (
   req: Request,
   res: Response,
-  next: NextFunction,
+  next: NextFunction
 ): Response | void => {
   const errors = validationResult(req);
   if (errors.isEmpty()) {
@@ -18,7 +18,7 @@ const validate = (
   errors.array().map(err => extractedErrors.push({ [err.param]: err.msg }));
 
   return res.status(422).json({
-    errors: extractedErrors,
+    errors: extractedErrors
   });
 };
 

@@ -6,7 +6,7 @@ const userValidationRules = (): ValidationChain[] => {
     body('password', 'Required')
       .notEmpty()
       .isLength({ min: 6 })
-      .withMessage('Min Length: 6 characters'),
+      .withMessage('Min Length: 6 characters')
   ];
 };
 

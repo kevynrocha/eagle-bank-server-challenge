@@ -10,7 +10,7 @@ router.post(
   '/',
   sessionValidationRules,
   validationMiddleware,
-  SessionController.store,
+  SessionController.store
 );
 
 export default router;
