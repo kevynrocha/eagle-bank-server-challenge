@@ -34,6 +34,8 @@
     "express-validator": "^6.9.0",
     "jsonwebtoken": "^8.5.1",
     "pino": "^6.8.0",
-    "pino-pretty": "^4.3.0"
+    "pino-pretty": "^4.3.0",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
   }
 }
